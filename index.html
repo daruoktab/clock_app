@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock App</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏰</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="clock-container neon" id="clockContainer">
+            <h1 class="title">Digital Clock</h1>
+            
+            <div class="main-time" id="mainTime">
+                <div class="ascii-clock" id="asciiClock"></div>
+            </div>
+            
+            <div class="date-info" id="dateInfo">
+                📅 Loading...
+            </div>
+            
+            <div class="world-times">
+                <h3 class="title">🌍 World Times</h3>
+                <div class="timezone-row" id="worldNY">🗽 New York    --:--</div>
+                <div class="timezone-row" id="worldLondon">🏰 London      --:--</div>
+                <div class="timezone-row" id="worldTokyo">🗾 Tokyo       --:--</div>
+                <div class="timezone-row" id="worldSydney">🇦🇺 Sydney      --:--</div>
+                <div class="timezone-row" id="worldDubai">🏜️ Dubai       --:--</div>
+            </div>
+            
+            <div class="controls">
+                <button onclick="toggleTheme()">T: Theme</button>
+                <button onclick="toggleFormat()">F: Format</button>
+                <button onclick="toggleSeconds()">S: Seconds</button>
+            </div>
+        </div>
+        
+        <div class="status-bar" id="statusBar">
+            Loading...
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

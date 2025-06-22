@@ -1,0 +1,189 @@
+/* Digital Clock App Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #0a0a1a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.clock-container {
+    width: 85ch;
+    max-width: 90vw;
+    padding: 2rem;
+    border: 4px solid;
+    border-radius: 8px;
+    background: #16213e;
+    text-align: center;
+}
+
+/* Theme variations */
+.neon {
+    border-color: cyan;
+    background: #001122;
+}
+
+.classic {
+    border-color: gold;
+    background: #221100;
+}
+
+.matrix {
+    border-color: green;
+    background: #001100;
+}
+
+.cyberpunk {
+    border-color: magenta;
+    background: #220022;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.neon .title { color: cyan; }
+.classic .title { color: gold; }
+.matrix .title { color: green; }
+.cyberpunk .title { color: magenta; }
+
+.main-time {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+.ascii-clock {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    white-space: pre;
+    line-height: 1.1;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    letter-spacing: 0.05em;
+}
+
+.neon .ascii-clock { color: cyan; text-shadow: 0 0 10px cyan; }
+.classic .ascii-clock { color: gold; text-shadow: 0 0 10px gold; }
+.matrix .ascii-clock { color: green; text-shadow: 0 0 10px green; }
+.cyberpunk .ascii-clock { color: magenta; text-shadow: 0 0 10px magenta; }
+
+.date-info {
+    color: white;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.world-times {
+    margin: 1rem 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    text-align: left;
+}
+
+.world-times .title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.timezone-row {
+    padding: 0.2rem 1rem;
+    margin: 0.1rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.neon .controls button:hover { border-color: cyan; }
+.classic .controls button:hover { border-color: gold; }
+.matrix .controls button:hover { border-color: green; }
+.cyberpunk .controls button:hover { border-color: magenta; }
+
+.status-bar {
+    width: 100%;
+    max-width: 85ch;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #888;
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .clock-container {
+        width: 95vw;
+        padding: 1rem;
+    }
+    
+    .ascii-clock {
+        font-size: clamp(0.4rem, 1.5vw, 0.7rem);
+    }
+    
+    .controls {
+        gap: 0.5rem;
+    }
+    
+    .controls button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Animation for theme transitions */
+.clock-container {
+    transition: all 0.3s ease;
+}
+
+.ascii-clock {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
